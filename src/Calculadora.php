@@ -15,8 +15,11 @@ class Calculadora
     }
 
     public function diff(){
-        return $this->num1-$this->num2;
-
+        if ($this->num1 > $this->num2){
+            return $this->num1-$this->num2;
+        }else{
+            return $this->num2-$this->num1;
+        }
     }
 
     public function mult(){
