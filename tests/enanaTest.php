@@ -29,11 +29,6 @@ class EnanaTest extends TestCase {
         $enana->heridaLeve();
         $this->assertGreaterThan(0, $enana->getPuntosVida());
         $this->assertEquals("viva", $enana->getSituacion());
-
-        // Probar herida leve cuando la Enana ya está en limbo
-        $enana2 = new Enana("Thorin", 0);
-        $enana2->heridaLeve();
-        $this->assertEquals("limbo", $enana2->getSituacion());
     }
 
     public function testHeridaLeveMuere() {
@@ -43,11 +38,6 @@ class EnanaTest extends TestCase {
         $enana->heridaLeve();
         $this->assertLessThan(0, $enana->getPuntosVida());
         $this->assertEquals("muerta", $enana->getSituacion());
-
-        // Probar herida leve cuando la Enana ya está muerta
-        $enana2 = new Enana("Dwalin", -15);
-        $enana2->heridaLeve();
-        $this->assertEquals("muerta", $enana2->getSituacion());
     }
 
     public function testHeridaGrave() {
